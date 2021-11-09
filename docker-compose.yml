@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+    app:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        environment: 
+            - PORT=8000
+        ports:
+            - "80:8000"
+        depends_on: 
+            - loader
+    loader:
+        build:
+            context: ./
+            dockerfile: Dockerfile
